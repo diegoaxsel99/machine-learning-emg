@@ -562,6 +562,38 @@ def init():
         
     else:
         print("procesos ya realizados")
+
+def convert_csv():
+    
+    path = os.path.join("features")
+    folder = os.path.join("features csv")
+    
+    if not os.path.isdir(folder):
+        os.mkdir(folder)
+        
+    listdir = os.listdir(path)
+    
+    k = 0
+    for i in listdir:
+        
+        k = k + 1
+        local_path = os.path.join(path,i)
+        
+        df = joblib.load(local_path)
+        
+        csv_path = os.path.join(folder, "matrix"+str(k)+".csv")
+        
+        df.to_csv(csv_path,index = False)
+    
+        
+        
+        
+        
+        
+        
+    
+    
+    
         
     
     
