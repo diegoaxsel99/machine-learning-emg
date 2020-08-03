@@ -586,10 +586,7 @@ def convert_csv():
         df.to_csv(csv_path,index = False)
     
         
-        
-        
-        
-        
+df = joblib.load('features/matrix1.pkl')
         
     
     
